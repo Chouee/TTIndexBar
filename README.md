@@ -27,4 +27,8 @@ self.indexBar.detailViewTextColor = [UIColor orangeColor];
 
 [self.indexBar setIndexes:[NSMutableArray arrayWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J", nil]];
 ```
+Delegate:
+```
+- (void)indexDidChanged:(TTIndexBar *)indexBar index:(NSInteger)index title:(NSString *)title;
+```
 
