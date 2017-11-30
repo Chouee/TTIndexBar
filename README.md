@@ -2,7 +2,7 @@
 
 A custom UITableView Index that allows setting of colors.
 
-# How to use
+## How to use
 
 Default:
 ```
