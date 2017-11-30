@@ -3,11 +3,13 @@ A custom UITableView Index that allows setting of colors.
 
 # How to use?
 Default:
+
     self.indexBar = [[TTIndexBar alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 30, 0, 30, SCREEN_HEIGHT)];
     self.indexBar.delegate = self;
     [self.view addSubview:self.indexBar];
 
 Custom:
+
     self.indexBar = [[TTIndexBar alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 30, 0, 30, SCREEN_HEIGHT)];
     self.indexBar.delegate = self;
     
