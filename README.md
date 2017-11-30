@@ -2,9 +2,9 @@
 
 A custom UITableView Index that allows setting of colors.
 
-# How to use?
+# How to use
 
-Default:
+##Default:
 
     self.indexBar = [[TTIndexBar alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 30, 0, 30, self.view.frame.size.height)];
     self.indexBar.delegate = self;
@@ -12,9 +12,9 @@ Default:
     
     [self.indexBar setIndexes:[NSMutableArray arrayWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J", nil]];
 
-Custom:
+##Custom:
 
-    self.indexBar = [[TTIndexBar alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 30, 0, 30, self.view.frame.size.height)];
+    self.indexBar = [[TTIndexBar alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 30, 0, 30, self.view.frame.size.height)];
     self.indexBar.delegate = self;
     
     self.indexBar.textColor = [UIColor redColor];
