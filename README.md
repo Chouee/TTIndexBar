@@ -2,6 +2,11 @@
 
 A custom UITableView index that allows setting of colors.
 
+Click index:
+
+![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot1.gif)
+
+
 ## How to use
 
 Default:
