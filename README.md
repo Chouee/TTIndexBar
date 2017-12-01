@@ -1,6 +1,6 @@
 # TTIndexBar
 
-A custom UITableView Index that allows setting of colors.
+A custom UITableView index that allows setting of colors.
 
 ## How to use
 
@@ -19,6 +19,7 @@ self.indexBar = [[TTIndexBar alloc] initWithFrame:CGRectMake(self.view.frame.siz
 self.indexBar.delegate = self;
 [self.view addSubview:self.indexBar];   
 
+//Custom property
 self.indexBar.textColor = [UIColor redColor];
 self.indexBar.selectedTextColor = [UIColor greenColor];
 self.indexBar.selectedBackgroundColor = [UIColor yellowColor];
