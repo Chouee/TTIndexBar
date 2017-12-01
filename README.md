@@ -2,9 +2,17 @@
 
 A custom UITableView index that allows setting of colors.
 
-Click index:
+#### Click index:
 
 ![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot.gif)
+
+#### Scroll tableView:
+
+![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot2.gif)
+
+#### Slide :
+
+![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot3.gif)
 
 
 ## How to use
