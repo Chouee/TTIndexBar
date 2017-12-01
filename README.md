@@ -10,7 +10,7 @@ A custom UITableView index that allows setting of colors.
 
 ![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot2.gif)
 
-#### Slide :
+#### Slide indexBar:
 
 ![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot3.gif)
 
