@@ -4,7 +4,7 @@ A custom UITableView index that allows setting of colors.
 
 Click index:
 
-![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot1.gif)
+![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot.gif)
 
 
 ## How to use
