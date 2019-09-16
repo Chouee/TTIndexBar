@@ -1,16 +1,17 @@
 # TTIndexBar
 
 A custom UITableView index that allows setting of colors.
+自定义tableView索引条
 
-#### Click index:
+#### 点击索引条:
 
 ![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot.gif)
 
-#### Scroll tableView:
+#### 滑动tableView:
 
 ![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot2.gif)
 
-#### Slide indexBar:
+#### 滑动索引条:
 
 ![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot3.gif)
 
