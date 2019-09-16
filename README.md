@@ -1,7 +1,7 @@
 # TTIndexBar
 
 A custom UITableView index that allows setting of colors.
-自定义tableView索引条
+（自定义UITableView索引条）
 
 #### 点击索引条:
 
