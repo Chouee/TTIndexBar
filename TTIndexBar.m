@@ -6,31 +6,106 @@
 
 #import "TTIndexBar.h"
 
+
+@interface CustomView: UIView
+
+@property (nonatomic, strong) UILabel *indexLabel;
+@property (nonatomic, strong) UIColor *drawColor;
+@property (nonatomic, strong) UIColor *textColor;
+
+@end
+
+
+@implementation CustomView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    
+    if (self = [super initWithFrame:frame]) {
+        
+        _drawColor = [UIColor lightGrayColor];
+        _indexLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.height, frame.size.height)];
+        _indexLabel.textColor = [UIColor whiteColor];
+        _indexLabel.textAlignment = NSTextAlignmentCenter;
+        _indexLabel.font = [UIFont boldSystemFontOfSize:18];
+        [self addSubview:_indexLabel];
+        
+    }
+    return self;
+}
+
+- (void)setTextColor:(UIColor *)textColor {
+    
+    _textColor = textColor;
+    _indexLabel.textColor = textColor;
+}
+
+- (void)drawRect:(CGRect)rect {
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, 2.0);
+    CGContextSetFillColorWithColor(context,_drawColor.CGColor);
+    [self getDrawPath:context];
+    CGContextFillPath(context);
+}
+
+- (void)getDrawPath:(CGContextRef)context {
+    
+    CGFloat width = self.bounds.size.width;
+    CGFloat height = self.bounds.size.height;
+    CGFloat xOffset = self.bounds.size.width * 1/4;
+    CGFloat yOffset = self.bounds.size.height * 1/4;
+    CGFloat radius = sqrt(pow(xOffset, 2) + pow(yOffset, 2));
+    
+    //Draw triangle
+    CGContextMoveToPoint(context, width - xOffset, height * 0.5 - yOffset);
+    CGContextAddLineToPoint(context,width, height * 0.5);
+    CGContextAddLineToPoint(context,width - xOffset, height * 0.5 + yOffset);
+    
+    //Draw semicircle
+    CGContextAddArcToPoint(context, width * 0.5, height, width * 0.5 - xOffset, height * 0.5 + yOffset, radius);
+    CGContextAddArcToPoint(context, 0, height * 0.5, width * 0.5 - xOffset, height * 0.5 - yOffset, radius);
+    CGContextAddArcToPoint(context, width * 0.5, 0, width * 0.5 + xOffset, height * 0.5 - yOffset, radius);
+    CGContextClosePath(context);
+}
+
+@end
+
+
 @interface TTIndexBar()
 
 @property (nonatomic, strong) UILabel *preLabel;
 @property (nonatomic, assign) NSInteger preIndex;
 @property (nonatomic, strong) NSMutableArray *labelArr;
 @property (nonatomic, strong) CustomView *indexDetailView;
+@property (nonatomic, strong) UIImpactFeedbackGenerator *gen API_AVAILABLE(ios(10.0));
 
 @end
 
+
 @implementation TTIndexBar
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
+    
     if (self = [super initWithFrame:frame]) {
         [self initData];
     }
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    
     if (self = [super initWithCoder:aDecoder]) {
         [self initData];
     }
     return self;
+}
+
+- (UIImpactFeedbackGenerator *)gen {
+    if (_gen == nil) {
+        _gen = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight];
+        [_gen prepare];
+    }
+    return _gen;
 }
 
 
@@ -51,8 +126,8 @@
 /**
  Set the data source
  */
-- (void)setIndexes:(NSArray *)indexes
-{
+- (void)setIndexes:(NSArray *)indexes {
+    
     //Reset data
     while (self.subviews.count) {
         [self.subviews.lastObject removeFromSuperview];
@@ -101,8 +176,8 @@
     }
 }
 
-- (void)setSelectedLabel:(NSInteger)index
-{
+- (void)setSelectedLabel:(NSInteger)index {
+    
     _preLabel.backgroundColor = [UIColor clearColor];
     _preLabel.textColor = _textColor;
     UILabel *label = _labelArr[index];
@@ -111,11 +186,11 @@
     _preLabel = label;
 }
 
-- (void)toSelectTitle:(CGPoint)touchPoint
-{
-    if(touchPoint.x <= 0 ||
+- (void)toSelectTitle:(CGPoint)touchPoint {
+    
+    if(/*touchPoint.x <= 0 ||*/
        touchPoint.y <= 0 ||
-       touchPoint.x >= self.bounds.size.width ||
+       /*touchPoint.x >= self.bounds.size.width ||*/
        touchPoint.y >= self.bounds.size.height) return;
     __block NSString *title;
     __block NSInteger index = 0;
@@ -141,9 +216,7 @@
     
     //impact
     if (@available(iOS 10.0, *)) {
-        UIImpactFeedbackGenerator *gen = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight];
-        [gen prepare];
-        [gen impactOccurred];
+        [self.gen impactOccurred];
     }
     
     if (_delegate && [_delegate conformsToProtocol:@protocol(TTIndexBarDelegate)]) {
@@ -153,31 +226,32 @@
 
 #pragma mark - Touch Methods
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
     [super touchesEnded:touches withEvent:event];
+    
     _onTouch = NO;
-    [UIView animateWithDuration:.2 animations:^{
+    [UIView animateWithDuration:.3 animations:^{
         _indexDetailView.alpha = 0;
     }];
 }
 
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
     [super touchesBegan:touches withEvent:event];
     
     _onTouch = YES;
     if (!_hideDetailView) {
-        _indexDetailView.alpha = 1;        
+        _indexDetailView.alpha = 1;
     }
     CGPoint touchPoint = [[[event touchesForView:self] anyObject] locationInView:self];
     [self toSelectTitle:touchPoint];
 }
 
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
     [super touchesMoved:touches withEvent:event];
     
     CGPoint touchPoint = [[[event touchesForView:self] anyObject] locationInView:self];
@@ -189,60 +263,4 @@
 
 
 
-@implementation CustomView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    if (self = [super initWithFrame:frame]) {
-        
-        _drawColor = [UIColor lightGrayColor];
-        _indexLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.height, frame.size.height)];
-        _indexLabel.textColor = [UIColor whiteColor];
-        _indexLabel.textAlignment = NSTextAlignmentCenter;
-        _indexLabel.font = [UIFont boldSystemFontOfSize:18];
-        [self addSubview:_indexLabel];
-        
-    }
-    return self;
-}
-
-- (void)setTextColor:(UIColor *)textColor
-{
-    _textColor = textColor;
-    _indexLabel.textColor = textColor;
-}
-
-- (void)drawRect:(CGRect)rect
-{
-    [self drawInContext:UIGraphicsGetCurrentContext()];
-}
-
-- (void)drawInContext:(CGContextRef)context
-{
-    CGContextSetLineWidth(context, 2.0);
-    CGContextSetFillColorWithColor(context,_drawColor.CGColor);
-    [self getDrawPath:context];
-    CGContextFillPath(context);
-}
-
-- (void)getDrawPath:(CGContextRef)context
-{
-    CGFloat width = self.bounds.size.width;
-    CGFloat height = self.bounds.size.height;
-    CGFloat xOffset = self.bounds.size.width * 1/4;
-    CGFloat yOffset = self.bounds.size.height * 1/4;
-    CGFloat radius = sqrt(pow(xOffset, 2) + pow(yOffset, 2));
-    
-    //Draw triangle
-    CGContextMoveToPoint(context, width - xOffset, height * 0.5 - yOffset);
-    CGContextAddLineToPoint(context,width, height * 0.5);
-    CGContextAddLineToPoint(context,width - xOffset, height * 0.5 + yOffset);
-    
-    //Draw semicircle
-    CGContextAddArcToPoint(context, width * 0.5, height, width * 0.5 - xOffset, height * 0.5 + yOffset, radius);
-    CGContextAddArcToPoint(context, 0, height * 0.5, width * 0.5 - xOffset, height * 0.5 - yOffset, radius);
-    CGContextAddArcToPoint(context, width * 0.5, 0, width * 0.5 + xOffset, height * 0.5 - yOffset, radius);
-    CGContextClosePath(context);
-}
-
-@end

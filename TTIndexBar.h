@@ -5,8 +5,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class TTIndexBar;
 
-@protocol TTIndexBarDelegate;
+@protocol TTIndexBarDelegate<NSObject>
+
+- (void)indexDidChanged:(TTIndexBar *)indexBar index:(NSInteger)index title:(NSString *)title;
+
+@end
+
 
 @interface TTIndexBar : UIView
 
@@ -50,25 +56,17 @@
  */
 @property (nonatomic, assign) CGFloat sectionHeight;
 
-- (instancetype)initWithFrame:(CGRect)frame;
+- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
+- (instancetype)init NS_UNAVAILABLE;
 - (void)setIndexes:(NSArray *)indexes;
 - (void)setSelectedLabel:(NSInteger)index;
 
-
-@end
-
-@protocol TTIndexBarDelegate<NSObject>
-
-- (void)indexDidChanged:(TTIndexBar *)indexBar index:(NSInteger)index title:(NSString *)title;
-
 @end
 
 
 
-@interface CustomView: UIView
 
-@property (nonatomic, strong) UILabel *indexLabel;
-@property (nonatomic, strong) UIColor *drawColor;
-@property (nonatomic, strong) UIColor *textColor;
 
-@end
+
+
