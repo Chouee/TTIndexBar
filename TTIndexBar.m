@@ -188,10 +188,8 @@
 
 - (void)toSelectTitle:(CGPoint)touchPoint {
     
-    if(/*touchPoint.x <= 0 ||*/
-       touchPoint.y <= 0 ||
-       /*touchPoint.x >= self.bounds.size.width ||*/
-       touchPoint.y >= self.bounds.size.height) return;
+    if(touchPoint.y <= 0 || touchPoint.y >= self.bounds.size.height) return;
+    
     __block NSString *title;
     __block NSInteger index = 0;
     
