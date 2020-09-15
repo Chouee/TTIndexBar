@@ -3,6 +3,7 @@
 A custom UITableView index that allows setting of colors.
 （自定义UITableView索引条）
 
+## 效果展示
 #### 单击索引条时:
 
 ![](https://img-service.csdnimg.cn/img_convert/5aaf65a7fb82d3b51beb47ddcd904bd2.png)
