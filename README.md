@@ -5,7 +5,7 @@ A custom UITableView index that allows setting of colors.
 
 #### 点击索引条:
 
-![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot.gif)
+![](https://img-service.csdnimg.cn/img_convert/5aaf65a7fb82d3b51beb47ddcd904bd2.png)
 
 #### 滑动tableView:
 
