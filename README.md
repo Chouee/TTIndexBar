@@ -3,22 +3,22 @@
 A custom UITableView index that allows setting of colors.
 （自定义UITableView索引条）
 
-#### 点击索引条:
+#### 单击索引条时:
 
 ![](https://img-service.csdnimg.cn/img_convert/5aaf65a7fb82d3b51beb47ddcd904bd2.png)
 
-#### 滑动tableView:
+#### 滑动tableView时:
 
-![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot2.gif)
+![](https://img-service.csdnimg.cn/img_convert/2eb7f5ae2bcf1e9ddba5b54f4a5683aa.png)
 
-#### 滑动索引条:
+#### 在索引条上滑动时:
 
-![](https://github.com/Chouee/TTIndexBar/blob/master/ScreenShot3.gif)
+![](https://img-service.csdnimg.cn/img_convert/104095921256bca0c2fed7bf4832c2ff.png)
 
 
-## How to use
+## 如何使用
 
-Default:
+默认样式:
 ```
 self.indexBar = [[TTIndexBar alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 30, 0, 30, self.view.frame.size.height)];
 self.indexBar.delegate = self;
@@ -27,7 +27,7 @@ self.indexBar.delegate = self;
 [self.indexBar setIndexes:[NSMutableArray arrayWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J", nil]];
 ```
 
-Custom:
+自定义样式:
 ```
 self.indexBar = [[TTIndexBar alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 30, 0, 30, self.view.frame.size.height)];
 self.indexBar.delegate = self;
@@ -42,7 +42,7 @@ self.indexBar.detailViewTextColor = [UIColor orangeColor];
 
 [self.indexBar setIndexes:[NSMutableArray arrayWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J", nil]];
 ```
-Delegate:
+代理回调:
 ```
 - (void)indexDidChanged:(TTIndexBar *)indexBar index:(NSInteger)index title:(NSString *)title;
 ```
