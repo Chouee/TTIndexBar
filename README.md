@@ -8,15 +8,15 @@
 TTIndexBar is a UITableView index bar that allows users to customize styles.
 
 ## Example
-1、单击索引条时:
+##### 1、When you clicking the index bar:
 
 ![](https://img-service.csdnimg.cn/img_convert/5aaf65a7fb82d3b51beb47ddcd904bd2.png)
 
-2、滑动tableView时:
+##### 2、When you sliding tableView:
 
 ![](https://img-service.csdnimg.cn/img_convert/2eb7f5ae2bcf1e9ddba5b54f4a5683aa.png)
 
-3、在索引条上滑动时:
+##### 3、When you sliding on the index bar:
 
 ![](https://img-service.csdnimg.cn/img_convert/104095921256bca0c2fed7bf4832c2ff.png)
 
