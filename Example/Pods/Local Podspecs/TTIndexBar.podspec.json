@@ -1,8 +1,8 @@
 {
   "name": "TTIndexBar",
   "version": "0.1.0",
-  "summary": "A index bar",
-  "description": "A indexBar for tableView.",
+  "summary": "TTIndexBar is a UITableView index bar that allows users to customize styles",
+  "description": "TTIndexBar is a UITableView index bar that allows users to customize styles.",
   "homepage": "https://github.com/Chouee/TTIndexBar",
   "license": {
     "type": "MIT",

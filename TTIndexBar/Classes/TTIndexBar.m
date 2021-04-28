@@ -230,7 +230,7 @@
     
     _onTouch = NO;
     [UIView animateWithDuration:.3 animations:^{
-        _indexDetailView.alpha = 0;
+        self.indexDetailView.alpha = 0;
     }];
 }
 
