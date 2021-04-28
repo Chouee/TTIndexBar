@@ -22,7 +22,7 @@ pod 'TTIndexBar'
 
 ## Author
 
-zhouting, choue_zhou@kingdee.com
+zhouting, choue_mails@163.com
 
 ## License
 
