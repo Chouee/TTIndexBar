@@ -7,7 +7,7 @@
 
 TTIndexBar is a UITableView index bar that allows users to customize styles.
 
-## 效果展示
+## Example
 1、单击索引条时:
 
 ![](https://img-service.csdnimg.cn/img_convert/5aaf65a7fb82d3b51beb47ddcd904bd2.png)
@@ -20,10 +20,21 @@ TTIndexBar is a UITableView index bar that allows users to customize styles.
 
 ![](https://img-service.csdnimg.cn/img_convert/104095921256bca0c2fed7bf4832c2ff.png)
 
+## Installation
 
-## 如何使用
+TTIndexBar is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
-默认样式:
+```ruby
+pod 'TTIndexBar'
+```
+
+## Requirements
+iOS 9.0+ 
+
+## How to use
+
+Default:
 ```
 self.indexBar = [[TTIndexBar alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 30, 0, 30, self.view.frame.size.height)];
 self.indexBar.delegate = self;
@@ -32,7 +43,7 @@ self.indexBar.delegate = self;
 [self.indexBar setIndexes:[NSMutableArray arrayWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J", nil]];
 ```
 
-自定义样式:
+Custom style:
 ```
 self.indexBar = [[TTIndexBar alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 30, 0, 30, self.view.frame.size.height)];
 self.indexBar.delegate = self;
@@ -47,22 +58,10 @@ self.indexBar.detailViewTextColor = [UIColor orangeColor];
 
 [self.indexBar setIndexes:[NSMutableArray arrayWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J", nil]];
 ```
-代理回调:
+
+Delegate callback:
 ```
 - (void)indexDidChanged:(TTIndexBar *)indexBar index:(NSInteger)index title:(NSString *)title;
-```
-
-
-## Requirements
-iOS 9.0+ 
-
-## Installation
-
-TTIndexBar is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'TTIndexBar'
 ```
 
 ## Author
