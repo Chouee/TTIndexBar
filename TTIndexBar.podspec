@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'TTIndexBar'
-    s.version          = '0.1.0'
+    s.version          = '0.1.1'
     s.summary          = 'TTIndexBar is a UITableView index bar that allows users to customize styles'
     
     # This description is used to generate tags and improve search results.

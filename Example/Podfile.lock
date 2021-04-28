@@ -1,5 +1,5 @@
 PODS:
-  - TTIndexBar (0.1.0)
+  - TTIndexBar (0.1.1)
 
 DEPENDENCIES:
   - TTIndexBar (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TTIndexBar: 5d312d6aec1f8a57e3d8c6713bbc4a6a72578f2a
+  TTIndexBar: fa27a2599c8e339e920f90236801a184b34eccdd
 
 PODFILE CHECKSUM: ca3cbfc34faab2a1476fc7c7e0cedf1ec2858904
 
