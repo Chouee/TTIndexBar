@@ -1,0 +1,16 @@
+PODS:
+  - TTIndexBar (0.1.0)
+
+DEPENDENCIES:
+  - TTIndexBar (from `../`)
+
+EXTERNAL SOURCES:
+  TTIndexBar:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TTIndexBar: 04fedef9347dd04b49c067a06432d3833db84480
+
+PODFILE CHECKSUM: ca3cbfc34faab2a1476fc7c7e0cedf1ec2858904
+
+COCOAPODS: 1.10.1

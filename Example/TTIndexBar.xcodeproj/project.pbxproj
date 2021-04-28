@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		05CA03F59219D82DC4FCF886 /* Pods-TTIndexBar_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTIndexBar_Tests.release.xcconfig"; path = "Target Support Files/Pods-TTIndexBar_Tests/Pods-TTIndexBar_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5431CB12E8777692BC4C236A /* Pods-TTIndexBar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTIndexBar_Tests.debug.xcconfig"; path = "Target Support Files/Pods-TTIndexBar_Tests/Pods-TTIndexBar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		593A19D27180D4C0A411C559 /* TTIndexBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = TTIndexBar.podspec; path = ../TTIndexBar.podspec; sourceTree = "<group>"; };
+		593A19D27180D4C0A411C559 /* TTIndexBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TTIndexBar.podspec; path = ../TTIndexBar.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6003F58A195388D20070C39A /* TTIndexBar_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTIndexBar_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,8 +65,8 @@
 		7C955AB20412A337AD809DC2 /* Pods-TTIndexBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTIndexBar_Example.debug.xcconfig"; path = "Target Support Files/Pods-TTIndexBar_Example/Pods-TTIndexBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3788FD739B5A134FC47AAC3 /* Pods_TTIndexBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTIndexBar_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9EA2E16EA5D59E97A576C60 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		C393236F5EE4103EBF0C79E0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A9EA2E16EA5D59E97A576C60 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		C393236F5EE4103EBF0C79E0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +193,6 @@
 				5431CB12E8777692BC4C236A /* Pods-TTIndexBar_Tests.debug.xcconfig */,
 				05CA03F59219D82DC4FCF886 /* Pods-TTIndexBar_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
