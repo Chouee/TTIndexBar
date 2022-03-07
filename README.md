@@ -1,4 +1,5 @@
-# TTIndexBar
+
+![](https://gitee.com/seen-every-where/pic-bed/raw/master/图片2.png)
 
 <!--[![CI Status](https://img.shields.io/travis/zhouting/TTIndexBar.svg?style=flat)](https://travis-ci.org/zhouting/TTIndexBar)-->
 [![Version](https://img.shields.io/cocoapods/v/TTIndexBar.svg?style=flat)](https://cocoapods.org/pods/TTIndexBar)
