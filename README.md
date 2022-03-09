@@ -67,7 +67,7 @@ Delegate callback:
 
 ## Author
 
-zhouting, choue_mails@163.com
+zhouting, chouee_mails@163.com
 
 ## License
 
